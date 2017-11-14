@@ -18,11 +18,12 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/car_not_car.png
 [image2]: ./output_images/car_not_car_hog.png
 [image3]: ./output_images/sliding_windows.png
-[image8]: ./output_images/hot_windows.jpg
-[image4]: ./output_images/heat_map_without_threshold.jpg
+[image8]: ./output_images/hot_windows.png
+[image4]: ./output_images/heat_map_without_threshold.png
 [image5]: ./output_images/heatmap.png
 [image6]: ./output_images/labels.png
 [image7]: ./output_images/bounding_box.png
+[image9]: ./output_images/test_images.png
 [video1]: ./project_video_output.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -73,12 +74,13 @@ I decided to search window positions from the mid of the image withe window size
 
 Ultimately I searched on three scales using YUV 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
 
-![alt text][image4]
+![alt text][image9]
 ---
 
 ### Video Implementation
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+
 Here's a [link to my video result](./project_video.mp4)
 
 
@@ -88,14 +90,24 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-### Here are six frames and their corresponding heatmaps:
+### Here is the image with windows with positive result from SVM model:
+
+![alt text][image8]
+
+
+### Here is the heatmap without threshold:
+
+![alt text][image4]
+
+### Here is the heatmap with threshold:
 
 ![alt text][image5]
 
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
+
+### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap :
 ![alt text][image6]
 
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
+### Here the resulting bounding boxes are drawn onto the image:
 ![alt text][image7]
 
 
